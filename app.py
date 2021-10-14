@@ -5,16 +5,20 @@ from flask import Flask
 
 app = Flask(__name__)
 
+@app.route('/')
+@app.route('/hello')
+def hello():
+    return "Hello World!"
+
 if os.getenv("PORT") is None:
     port = 5000
 else:
     port = os.getenv("PORT")
 
-# get name value from query string and cookie
-@app.route('/')
-@app.route('/hello')
+@app.route('/port')
 def hello():
-    return "Hello World! From Raka"
+    return "Hello World!" + port
+
 
 if __name__ == "__main__":
     app.run(
