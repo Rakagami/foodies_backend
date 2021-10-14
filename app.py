@@ -6,7 +6,7 @@ from flask import Flask
 app = Flask(__name__)
 
 if os.getenv("PORT") is None:
-    port = 80
+    port = 5000
 else:
     port = os.getenv("PORT")
 
