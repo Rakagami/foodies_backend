@@ -5,7 +5,6 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
 if os.getenv("PORT") is None:
     port = 5000
 else:
@@ -16,9 +15,9 @@ else:
 def hello():
     return "Hello World!"
 
-@app.route('/port')
-def port():
-    return "Hello World!" + port
+#@app.route('/port')
+#def port():
+#    return "Hello World! " + port
 
 if __name__ == "__main__":
     app.run(
