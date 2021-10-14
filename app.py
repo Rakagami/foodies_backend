@@ -15,9 +15,9 @@ else:
 def hello():
     return "Hello World!"
 
-#@app.route('/port')
-#def port():
-#    return "Hello World! " + port
+@app.route('/port')
+def port():
+    return "Hello World! " + str(port)
 
 if __name__ == "__main__":
     app.run(
