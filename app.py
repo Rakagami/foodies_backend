@@ -7,14 +7,12 @@ app = Flask(__name__)
 
 port = int(os.environ.get("PORT", 5000))
 
+# Debug related
 @app.route('/')
 @app.route('/hello')
 def hello():
     return "Hello World!"
 
-@app.route('/port')
-def print_port():
-    return "Hello World! " + str(port)
 
 if __name__ == "__main__":
     app.run(
