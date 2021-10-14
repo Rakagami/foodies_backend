@@ -13,7 +13,7 @@ def hello():
     return "Hello World!"
 
 @app.route('/port')
-def port():
+def print_port():
     return "Hello World! " + str(port)
 
 if __name__ == "__main__":
