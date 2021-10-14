@@ -16,7 +16,7 @@ else:
     port = os.getenv("PORT")
 
 @app.route('/port')
-def hello():
+def port():
     return "Hello World!" + port
 
 
