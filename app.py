@@ -12,9 +12,9 @@ port = int(os.environ.get("PORT", 5000))
 def hello():
     return "Hello World!"
 
-@app.route('/port')
-def port():
-    return "Hello World! " + str(port)
+#@app.route('/port')
+#def port():
+#    return "Hello World! " + str(port)
 
 if __name__ == "__main__":
     app.run(
