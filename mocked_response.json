@@ -1,0 +1,72 @@
+{
+  "recipeList": [
+    {
+      "id": 123,
+      "name": "Spaghetti",
+      "summary": "Blablabla",
+      "ingredients": [
+        {
+          "id": 22,
+          "name": "Tomato",
+          "units": "pcs",
+          "quantity": 2
+        },
+        {
+          "id": 12,
+          "name": "Cheddar Cheese",
+          "units": "g",
+          "quantity": 200
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "name": "Lasagna",
+      "summary": "Blablabla",
+      "ingredients": [
+        {
+          "id": 23,
+          "name": "Eggs",
+          "units": "pcs",
+          "quantity": 2
+        },
+        {
+          "id": 11,
+          "name": "Butter",
+          "units": "g",
+          "quantity": 100
+        }
+      ]
+    }
+  ],
+  "shopList": [
+    [
+      {
+        "id": 22,
+        "name": "Tomato",
+        "units": "pcs",
+        "quantity": 2
+      },
+      {
+        "id": 12,
+        "name": "Cheddar Cheese",
+        "units": "g",
+        "quantity": 200
+      }
+    ],
+    [
+      {
+        "id": 23,
+        "name": "Eggs",
+        "units": "pcs",
+        "quantity": 2
+      },
+      {
+        "id": 11,
+        "name": "Butter",
+        "units": "g",
+        "quantity": 100
+      }
+    ]
+  ]
+}
