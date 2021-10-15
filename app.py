@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response
 from flask_cors import CORS, cross_origin
 
 import json
@@ -17,8 +17,10 @@ port = int(os.environ.get("PORT", 5000))
 def hello():
     return "Hello World!"
 
-@app.route('/all', methods = ['POST']) 
+@app.route('/all', methods = ['POST', 'OPTIONS']) 
 def all():
+    if request.method == "OPTIONS": # CORS preflight
+        return _build_cors_preflight_response()
     response_data = request.get_json()
     if response_data is None:
         return {}, 400
@@ -29,6 +31,13 @@ def all():
     # Creating mocked response
     mocked_response_json = json.load(open('mocked_response.json'))
     return jsonify(mocked_response_json), 200
+
+def _build_cors_preflight_response():
+    response = make_response()
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    response.headers.add('Access-Control-Allow-Headers', "*")
+    response.headers.add('Access-Control-Allow-Methods', "*")
+    return response
 
 if __name__ == "__main__":
     app.run(
