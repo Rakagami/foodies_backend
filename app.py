@@ -7,7 +7,7 @@ from flask_cors import CORS, cross_origin
 import json
 
 app = Flask(__name__)
-cors = CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 port = int(os.environ.get("PORT", 5000))
