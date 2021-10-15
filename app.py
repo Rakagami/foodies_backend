@@ -2,19 +2,25 @@
 import os
 
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
+
 import json
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 port = int(os.environ.get("PORT", 5000))
 
 # Debug related
 @app.route('/')
 @app.route('/hello')
+@cross_origin()
 def hello():
     return "Hello World!"
 
 @app.route('/all', methods = ['POST']) 
+@cross_origin()
 def all():
     response_data = request.get_json()
     if response_data is None:
