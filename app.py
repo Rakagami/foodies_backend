@@ -30,13 +30,18 @@ def all():
 
     # Creating mocked response
     mocked_response_json = json.load(open('mocked_response.json'))
-    return jsonify(mocked_response_json), 200
+    return _corsify_actual_response(jsonify(mocked_response_json)), 200
 
 def _build_cors_preflight_response():
     response = make_response()
     response.headers.add("Access-Control-Allow-Origin", "*")
     response.headers.add('Access-Control-Allow-Headers', "*")
     response.headers.add('Access-Control-Allow-Methods', "*")
+    return response
+
+
+def _corsify_actual_response(response):
+    response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
 if __name__ == "__main__":
